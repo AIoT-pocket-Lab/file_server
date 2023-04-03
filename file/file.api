@@ -1,0 +1,31 @@
+syntax = "v1"
+
+info(
+	title: "文件服务"
+	desc: "文件服务"
+	author: "Liangda Y."
+	email: "liangda_yld@163.com"
+	version: "v1"
+)
+
+type (
+	BinFileUploadReq {
+		FileName    string `json:"file_name,optional"`
+		FileDir     string `json:"file_dir,optional"`
+		FileContext string `json:"file_context"`
+		PassKey     string `json:"pass_key"`
+	}
+
+	BinFileUploadResp {
+		FilePath string `json:"file_path"`
+	}
+)
+
+@server(
+	prefix: api/v1/file
+)
+service file {
+	@doc "上传bin文件"
+	@handler binFileUpload
+	post /upload/bin (BinFileUploadReq) returns (BinFileUploadResp)
+}

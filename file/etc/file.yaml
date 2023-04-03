@@ -1,0 +1,16 @@
+Name: file #服务名称
+Host: 0.0.0.0 #监听地址
+Port: 8888 #监听端口
+Timeout: 5000 #服务超时返回
+
+Log:
+  ServiceName: file.api #日志名称
+  Mode: file #日志保存方式
+  Path: logs #日志保存路径
+  Level: info #日志级别
+  Compress: true #日志是否压缩
+  KeepDays: 2 #日志保存天数
+
+PassKey: 43ZJJWpCZsosAzUr6KiPNz4Ek5iZlZVE #文件上传密钥
+
+FileDir: /file/ #文件上传默认路径
